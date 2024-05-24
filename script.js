@@ -9,12 +9,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function processRegistration(event) {
   event.preventDefault();
+  let registrationStatus = false;
+  let message = "";
   //alert('registration simulation');
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
   //console.log(username);
 
   localStorage.setItem("RegisteredUsers", username + ":" + password + ";");
+
+  // Retrieve the item from localStorage
+const savedItem = localStorage.getItem('RegisteredUsers');
+
+// Check if the item is saved and push an alert to the browser
+    if (savedItem !== null) 
+    {
+      alert('User registered successfully!');
+    } 
+    else 
+    {
+      alert('User not registered.');
+    }
 }
 
 function processLogin(event) {
