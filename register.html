@@ -37,9 +37,11 @@
       <input type="text" id="username" name="username" required>
       <span id="usernameError" class="error-message"></span>
     </div>
-    <div class="input-group">
+    <div class="input-group password-group">
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
+      <input type="checkbox" id="togglePassword" onclick="togglePasswordVisibility()">
+      <label for="togglePassword" class="toggle-label">Show</label>
     </div>
     <div class="input-group">
       <button type="submit">Register</button>
