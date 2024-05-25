@@ -53,6 +53,14 @@ function processRegistration(event) {
 
 function processLogin(event) {
   event.preventDefault();
+  
+  // Validate username before proceeding
+  validateUsername();
+  const usernameError = document.getElementById("usernameError").textContent;
+  if (usernameError !== "") {
+    return; // Stop the form submission if there are validation errors
+  }
+
   let usernameEntered = document.getElementById("username").value;
   let passwordEntered = document.getElementById("password").value;
 
